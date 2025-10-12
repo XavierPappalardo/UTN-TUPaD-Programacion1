@@ -1,0 +1,4 @@
+nombre, precio, cantidad
+lapicera, 120.5, 30
+goma, 80.0, 50
+corrector, 160.5, 25
