@@ -4,8 +4,6 @@
 
 productos = []
 
-diccionario = {}
-
 #Verifica si existe el archivo y lee los productos
 
 import os
@@ -15,8 +13,8 @@ def modificarLinea():
     if os.path.exists("productos.txt") == True:
         with open("productos.txt", "r") as archivo:
             archivo.readline()
-            for linea in range(3):
-                linea_modificada = archivo.readline().split(",")
+            for linea in archivo:
+                linea_modificada = linea.split(",")
                 dato_producto = (linea_modificada[0].strip())
                 dato_precio = (linea_modificada[1].strip())
                 dato_cantidad = (linea_modificada[2].strip())
@@ -89,9 +87,9 @@ def reescribirArchivo():
     with open("productos.txt", "w") as archivo:
         archivo.write("nombre, precio, cantidad\n")
         for i in productos:
-            archivo.write(f"{i["nombre"]}, ")
-            archivo.write(f"{i["precio"]}, ")
-            archivo.write(f"{i["cantidad"]}\n")
+            archivo.write(f"{i['nombre']}, ")
+            archivo.write(f"{i['precio']}, ")
+            archivo.write(f"{i['cantidad']}\n")
     return
 
 #Llamado de las funciones
